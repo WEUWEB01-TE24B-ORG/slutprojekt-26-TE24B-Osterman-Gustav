@@ -1,492 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-@media screen and (max-width: 767px){
-    body{
-        display:flex;
-        flex-direction: column;
-        font-family: Itim, sans-serif;
-    }
-    header{
-        display: flex;
-        background-color: #AEAEAE;
-        justify-content: space-around;
-        border-radius: 20px;
-        flex-direction: row;
-        position: sticky;
-        top: 5px;
-        max-height: 10vh;
-    }
-    header>h1{
-        background-color: #D9D9D9;
-        padding-right: 20px;
-        padding-left: 20px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        border-radius: 15px;
-        align-self: center;
-        font-size: x-large;
-    }
-    header>img{
-        display: flex;
-        justify-content: stretch;
-        max-width: 15px;
-        max-height: 15px;
-        align-self: center;
-        padding: 10px;
-        margin: 1.2vh;
-        background-color: #D9D9D9;
-        border-radius: 10px;
-    }
+/* Grund */
 
-    #ProductSection{
-        margin-top: 20px;
-        background-color: #D9D9D9;
-        border-radius: 15px;
-    }
-    #ProductHeader{
-        background-color:#AEAEAE;
-        display: flex;
-        justify-content: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        padding-top: 0;
-    }
-    #ProductHeader>h1{
-        background-color: #D9D9D9;
-        border-radius: 10px;
-        padding-left: 30%;
-        padding-right: 30%;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-    .Products{
-        background-color: #AEAEAE;
-        display: flex;
-        flex-direction: column;
-        margin-top: 1vh;
-        margin-bottom: 2vh;
-        margin-left: 5%;
-        margin-right: 5%;
-        border-radius: 27px;
-        align-self: center;
-    }
-    .Products>img{
-        display: flex;
-        justify-content:stretch;
-        align-self: center;
-        max-width: 80%;
-        padding-top: 4vh;
-        max-height: 28vh;
-    }
-    .Products>h2{
-        align-self: center;
-        margin-top: 8px;
-        padding-bottom: 8px;
-        margin-bottom: 1vh;
-        margin-top: 1vh;
-        background-color: #D9D9D9;
-        border-radius: 15px;
-        padding-left: 5px;
-        padding: 5px;
-    }
-
-    #Kaningossedjur{
-        min-width: 0;
-        min-height: 0;
-    }
-    #Hajgossedjur{
-        min-width: 0;
-        min-height: 0;
-    }
-    #Pingvingossedjur{
-        min-width: 0;
-        min-height: 0;
-    }
-    #Kycklinggossedjur{
-        min-width: 0;
-        min-height: 0;
-    }
-    #Rävgossedjur{
-        min-width: 0;
-        min-height: 0;
-    }
-    #Apgosedjur{
-        min-width: 0;
-        min-height: 0;
-    }
-    footer{
-        display: block;
-        margin-top: 1vh;
-        background-color: #AEAEAE;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-    footer>h1{
-        padding-top: 0.2vh;
-        padding-bottom: 0.2vh;
-        background-color: #D9D9D9;
-        border-radius: 10px;
-    }
-    a:link{
-        color: #0090EA;;
-    }
-    #cartItemCounter{
-    z-index: 999;
-    position: absolute;
-    right: .5%;
-    top: -1vh;
-    background-color: red;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    border-radius: 500px;
-    color:white;
-}
-}
-@media screen and (min-width: 767px) and (max-width: 1022px){
-    body{
-        display:grid;
-        grid-template-columns:0.25fr 2fr 0.25fr 2fr 0.25fr;
-        grid-template-rows: 5vh 5vh 5vh 50vh 50vh 50vh 8vh;
-        font-family: Itim, sans-serif;
-    }
-    header{
-        grid-row: 1/2;
-        grid-column: 1/6;
-        display: flex;
-        background-color: #AEAEAE;
-        justify-content: space-around;
-        border-radius: 12px;
-        flex-direction: row;
-        position: sticky;
-        top: 5px
-    }
-    header>h1{
-        background-color: #D9D9D9;
-        padding-right: 25%;
-        padding-left: 25%;
-        padding-bottom: 0.25vh;
-        padding-top: 0.25vh;
-        border-radius: 10px;
-        align-self: center;
-        font-size: xx-large;
-    }
-    header>img{
-        display: flex;
-        justify-content: stretch;
-        padding: 0.25vh;
-        margin: 0.9vh;
-        background-color: #D9D9D9;
-        border-radius: 10px;
-    }
-
-    #ProductSection{
-        grid-column: 1/6;
-        grid-row: 3/7;
-        background-color: #D9D9D9;
-        border-radius: 15px;
-    }
-    #ProductHeader{
-        background-color:#AEAEAE;
-        display: flex;
-        justify-content: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        grid-row: 3/4;
-        grid-column: 1/6;
-        padding-top: 0;
-    }
-    #ProductHeader>h1{
-        background-color: #D9D9D9;
-        border-radius: 10px;
-        padding-left: 30%;
-        padding-right: 30%;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        align-self: center;
-        font-size: x-large;
-    }
-    .Products{
-        background-color: #AEAEAE;
-        display: flex;
-        flex-direction: column;
-        margin-top: 1vh;
-        margin-bottom: 2vh;
-        margin-left: 5%;
-        margin-right: 5%;
-        border-radius: 27px;
-        align-self: center;
-    }
-    .Products>img{
-        display: flex;
-        justify-content:stretch;
-        align-self: center;
-        max-width: 80%;
-        padding-top: 4vh;
-        max-height: 28vh;
-    }
-    .Products>h2{
-        align-self: center;
-        margin-top: 8px;
-        padding-bottom: 8px;
-        margin-bottom: 1vh;
-        margin-top: 1vh;
-        background-color: #D9D9D9;
-        border-radius: 15px;
-        padding-left: 5px;
-        padding: 5px;
-        font-size: xx-large;
-    }
-
-    #Kaningossedjur{
-        grid-row: 4/5;
-        grid-column: 2/3;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Hajgossedjur{
-        grid-row: 4/5;
-        grid-column: 4/5;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Pingvingossedjur{
-        grid-row: 6/7;
-        grid-column: 2/3;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Kycklinggossedjur{
-        grid-row: 5/6;
-        grid-column: 2/3;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Rävgossedjur{
-        grid-row: 5/6;
-        grid-column: 4/5;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Apgosedjur{
-        grid-row: 6/7;
-        grid-column: 4/5;
-        min-width: 0;
-        min-height: 0;
-    }
-    footer{
-        margin-top: 1vh;
-        grid-row: 7/8;
-        grid-column: 1/6;
-        display: flex;
-        background-color: #AEAEAE;
-        justify-content: center;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-        flex-direction: row;
-        font-size: smaller;
-    }
-    footer>h1{
-        padding-top: 0.3vh;
-        padding-bottom: 0.3vh;
-        padding-left: 10%;
-        padding-right: 10%;
-        background-color: #D9D9D9;
-        border-radius: 10px;
-        align-self: center;
-    }
-    a:link{
-        color: #0090EA;;
-    }
-    #cartItemCounter{
-    z-index: 999;
-    position: absolute;
-    right: .5%;
-    top: -1.3vh;
-    background-color: red;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    border-radius: 500px;
-    color:white;
+:root{
+    --bg:#1a1a1a;
+    --primary:#2c2c2c;
+    --secondary:#3a3a3a;
+    --accent:#c0392b;
+    --text:#f5f5f5;
 }
 
-}
-@media screen and (min-width: 1023px){
-    body{
-        display:grid;
-        grid-template-columns:0.5fr 1fr 0.25fr 1fr 0.25fr 1fr 0.5fr;
-        grid-template-rows: 10vh 5vh 10vh 50vh 50vh 10vh;
-        font-family: Itim, sans-serif;
-    }
-    header{
-        grid-row: 1/2;
-        grid-column: 1/8;
-        display: flex;
-        background-color: #AEAEAE;
-        justify-content: space-around;
-        border-radius: 12px;
-        flex-direction: row;
-        position: sticky;
-        top: 5px
-    }
-    header>h1{
-        background-color: #D9D9D9;
-        padding-right: 33%;
-        padding-left: 33%;
-        padding-bottom: 0.8vh;
-        padding-top: 0.8vh;
-        border-radius: 10px;
-        align-self: center;
-    }
-    header>img{
-        display: flex;
-        justify-content: stretch;
-        padding: 1vh;
-        margin: 1.2vh;
-        background-color: #D9D9D9;
-        border-radius: 10px;
-    }
-
-    #ProductSection{
-        grid-column: 1/8;
-        grid-row: 3/7;
-        background-color: #D9D9D9;
-        border-radius: 15px;
-    }
-    #ProductHeader{
-        background-color:#AEAEAE;
-        display: flex;
-        justify-content: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        grid-row: 3/4;
-        grid-column: 1/8;
-        padding-top: 0;
-    }
-    #ProductHeader>h1{
-        background-color: #D9D9D9;
-        border-radius: 10px;
-        padding-left: 30%;
-        padding-right: 30%;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-    .Products{
-        background-color: #AEAEAE;
-        display: flex;
-        flex-direction: column;
-        margin-top: 1vh;
-        margin-bottom: 2vh;
-        margin-left: 5%;
-        margin-right: 5%;
-        border-radius: 27px;
-        align-self: center;
-    }
-    .Products>img{
-        display: flex;
-        justify-content:stretch;
-        align-self: center;
-        max-width: 80%;
-        padding-top: 4vh;
-        max-height: 28vh;
-    }
-    .Products>h2{
-        align-self: center;
-        margin-top: 8px;
-        padding-bottom: 8px;
-        margin-bottom: 1vh;
-        margin-top: 1vh;
-        background-color: #D9D9D9;
-        border-radius: 15px;
-        padding-left: 5px;
-        padding: 5px;
-    }
-
-    #Kaningossedjur{
-        grid-row: 4/5;
-        grid-column: 2/3;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Hajgossedjur{
-        grid-row: 4/5;
-        grid-column: 4/5;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Pingvingossedjur{
-        grid-row: 4/5;
-        grid-column: 6/7;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Kycklinggossedjur{
-        grid-row: 5/6;
-        grid-column: 2/3;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Rävgossedjur{
-        grid-row: 5/6;
-        grid-column: 4/5;
-        min-width: 0;
-        min-height: 0;
-    }
-    #Apgosedjur{
-        grid-row: 5/6;
-        grid-column: 6/7;
-        min-width: 0;
-        min-height: 0;
-    }
-    footer{
-        margin-top: 1vh;
-        grid-row: 6/7;
-        grid-column: 1/8;
-        display: flex;
-        background-color: #AEAEAE;
-        justify-content: space-around;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-        flex-direction: row;
-    }
-    footer>h1{
-        padding-top: 0.2vh;
-        padding-bottom: 0.2vh;
-        padding-left: 5%;
-        padding-right: 5%;
-        background-color: #D9D9D9;
-        border-radius: 10px;
-        align-self: center;
-    }
-    a:link{
-        color: #0090EA;;
-    }
-    #cartItemCounter{
-    z-index: 999;
-    position: absolute;
-    right: .5%;
-    top: -3vh;
-    background-color: red;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    border-radius: 500px;
-    color:white;
+body{
+    margin:0;
+    font-family: Itim, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
+/* Header */
+
+header{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color: var(--primary);
+    border-radius:20px;
+    position:sticky;
+    top:5px;
+    padding:1rem;
 }
+
+header>h1{
+    background-color: var(--secondary);
+    padding:0.5rem 1rem;
+    border-radius:10px;
+}
+
+/* ikoner */
+header img{
+    background-color: var(--secondary);
+    padding:0.5rem;
+    border-radius:10px;
+}
+
+/* Produkter */
+
+#ProductHeader{
+    background-color: var(--primary);
+    text-align:center;
+    border-radius:15px;
+}
+
+#ProductHeader>h1{
+    background-color: var(--secondary);
+    display:inline-block;
+    padding:0.5rem 2rem;
+    border-radius:10px;
+}
+
+.Products{
+    background-color: var(--primary);
+    margin:1rem;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border:2px solid var(--accent);
+}
+
+.Products img{
+    max-width:80%;
+    border-radius:10px;
+    padding-top:1rem;
+}
+
+.Products h2{
+    background-color: var(--secondary);
+    padding:0.5rem;
+    border-radius:10px;
+}
+
+/* Footer */
+
+footer{
+    background-color: var(--primary);
+    text-align:center;
+    padding:1rem;
+    border-radius:20px;
+}
+
+footer h1{
+    background-color: var(--secondary);
+    padding:0.5rem;
+    border-radius:10px;
+}
+
+/* Knappar */
 
 .Button:hover{
-    box-shadow: 5px 5px 10px rgba(109, 109, 109, 0.5);
-    cursor: pointer;
+    box-shadow:0 0 15px rgba(192,57,43,0.6);
+    cursor:pointer;
+}
+
+/* Varukorg */
+
+#cartItemCounter{
+    position:absolute;
+    right:0.5rem;
+    top:-1rem;
+    background-color:red;
+    color:white;
+    padding:0.2rem 0.5rem;
+    border-radius:50%;
 }
