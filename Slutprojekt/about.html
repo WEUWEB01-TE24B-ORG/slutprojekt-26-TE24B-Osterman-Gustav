@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss - Gitarrbutiken</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body onload="updateCartCounter()">
+
+    <header>
+        <h1>Gitarrbutiken</h1>
+
+        <nav aria-label="Huvudmeny">
+            <a href="index.html">Hem</a>
+            <a href="products.html">Produkter</a>
+            <a href="checkout.html">Varukorg</a>
+            <a href="about.html">Om oss</a>
+        </nav>
+
+        <div class="cart-container">
+            <img id="cartIcon" src="./bilder/cart.jpg" alt="Varukorg" onclick="goToPage('checkout.html')">
+            <p id="cartCounter">0</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h2>Om Gitarrbutiken</h2>
+
+                <p>
+                    Gitarrbutiken är en webbshop skapad för att göra det enkelt att hitta
+                    gitarrer för både nybörjare och proffs.
+                </p>
+
+                <p>
+                    Vi erbjuder elgitarrer, akustiska gitarrer och basar från välkända märken
+                    som Fender, Gibson och Yamaha.
+                </p>
+
+                <p>
+                    Vårt mål är att ge en enkel, tydlig och inspirerande upplevelse för alla
+                    som vill börja eller fortsätta spela musik.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Gitarrbutiken</p>
+        <p>Licens: CC BY 4.0</p>
+    </footer>
+
+</body>
+
+</html>

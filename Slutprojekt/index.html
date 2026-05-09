@@ -10,86 +10,74 @@
 </head>
 
 <body onload="updateCartCounter()">
+
     <header>
         <h1>Gitarrbutiken</h1>
+
         <nav aria-label="Huvudmeny">
             <a href="index.html">Hem</a>
             <a href="products.html">Produkter</a>
             <a href="checkout.html">Varukorg</a>
             <a href="about.html">Om oss</a>
         </nav>
+
         <div class="cart-container">
             <img id="cartIcon" src="./bilder/cart.jpg" alt="Varukorg" onclick="goToPage('checkout.html')">
             <p id="cartCounter">0</p>
         </div>
     </header>
+
     <main>
+
         <section class="hero">
             <div class="hero-text">
                 <h2>Hitta din drömgitarr</h2>
-                <p>
-                    Elgitarrer, basar och akustiska gitarrer
-                    för både nybörjare och professionella.
-                </p>
-                <a class="hero-button" href="products.html">
-                    Se produkter
-                </a>
+                <p>Elgitarrer, basar och akustiska gitarrer för alla nivåer.</p>
+                <a class="hero-button" href="products.html">Se produkter</a>
             </div>
         </section>
+
         <section class="product-section">
             <h2>Populära gitarrer</h2>
+
             <div class="product-grid">
+
                 <article class="product-card">
                     <img src="./bilder/310-3106714_fender-stratocaster-png-transparent-png.png"
                         alt="Fender Stratocaster">
                     <h3>Fender Stratocaster</h3>
                     <p>7999 kr</p>
-                    <button onclick="addToCart(
-                        'Fender Stratocaster',
-                        '7999 kr',
-                        './images/stratocaster.webp'
-                    )">
-                        Lägg till i varukorg
-                    </button>
+                    <button
+                        onclick="addToCart('Fender Stratocaster','7999 kr','./bilder/310-3106714_fender-stratocaster-png-transparent-png.png')">Lägg
+                        till i varukorg</button>
                 </article>
+
                 <article class="product-card">
                     <img src="./bilder/gibson.jpg" alt="Gibson Les Paul">
                     <h3>Gibson Les Paul</h3>
                     <p>11999 kr</p>
-                    <button onclick="addToCart(
-                        'Gibson Les Paul',
-                        '11999 kr',
-                        './images/lespaul.webp'
-                    )">
-                        Lägg till i varukorg
-                    </button>
+                    <button onclick="addToCart('Gibson Les Paul','11999 kr','./bilder/gibson.jpg')">Lägg till i
+                        varukorg</button>
                 </article>
+
                 <article class="product-card">
-                    <img src="./bilder/Yamaha_FG800J.jpg" alt="Akustisk Yamaha gitarr">
-                    <h3>Yamaha Acoustic</h3>
+                    <img src="./bilder/Yamaha_FG800J.jpg" alt="Yamaha FG800J">
+                    <h3>Yamaha FG800J</h3>
                     <p>1999 kr</p>
-                    <button onclick="addToCart(
-                        'Yamaha Acoustic',
-                        '1999 kr',
-                        './images/acoustic.webp'
-                    )">
-                        Lägg till i varukorg
-                    </button>
+                    <button onclick="addToCart('Yamaha FG800J','1999 kr','./bilder/Yamaha_FG800J.jpg')">Lägg till i
+                        varukorg</button>
                 </article>
+
             </div>
         </section>
+
     </main>
+
     <footer>
-        <p>
-            © 2026 Gitarrbutiken
-        </p>
-        <p>
-            Licens:
-            <a href="https://creativecommons.org/licenses/by/4.0/">
-                CC BY 4.0
-            </a>
-        </p>
+        <p>© 2026 Gitarrbutiken</p>
+        <p>Licens: CC BY 4.0</p>
     </footer>
+
 </body>
 
 </html>

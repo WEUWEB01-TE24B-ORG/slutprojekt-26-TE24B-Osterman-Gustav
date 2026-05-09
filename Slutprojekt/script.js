@@ -1,105 +1,87 @@
 function goToPage(page){
-    window.location.href = page;
+window.location.href = page;
 }
 
 function addToCart(name, price, image){
 
-    let cart =
-        JSON.parse(localStorage.getItem("cart"))
-        || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    let product = {
-        id:Date.now(),
-        name:name,
-        price:price,
-        image:image
-    };
+let product = {
+id:Date.now(),
+name:name,
+price:price,
+image:image
+};
 
-    cart.push(product);
+cart.push(product);
 
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
+localStorage.setItem("cart", JSON.stringify(cart));
 
-    updateCartCounter();
+updateCartCounter();
 }
 
 function updateCartCounter(){
 
-    let cart =
-        JSON.parse(localStorage.getItem("cart"))
-        || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    let counter =
-        document.getElementById("cartCounter");
+let counter = document.getElementById("cartCounter");
 
-    if(counter){
-        counter.innerText = cart.length;
-    }
+if(counter){
+counter.innerText = cart.length;
+}
+
 }
 
 function loadCart(){
 
-    let cart =
-        JSON.parse(localStorage.getItem("cart"))
-        || [];
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartDiv = document.getElementById("cartItems");
 
-    let cartContainer =
-        document.getElementById("cartItems");
+if(!cartDiv) return;
 
-    if(!cartContainer){
-        return;
-    }
+cartDiv.innerHTML = "";
 
-    cartContainer.innerHTML = "";
+cart.forEach(product => {
 
-    cart.forEach(product => {
+let item = document.createElement("article");
+item.classList.add("product-card");
 
-        let div = document.createElement("div");
+item.innerHTML =
+'<img src="' + product.image + '" alt="' + product.name + '">' +
+'<h3>' + product.name + '</h3>' +
+'<p>' + product.price + '</p>' +
+'<button onclick="deleteProduct(' + product.id + ', this)">Ta bort</button>';
 
-        div.classList.add("product-card");
+cartDiv.appendChild(item);
 
-        div.innerHTML = `
-            <img src="${product.image}"
-                 alt="${product.name}">
+});
 
-            <h3>${product.name}</h3>
-
-            <p>${product.price}</p>
-
-            <button onclick="removeFromCart(${product.id})">
-                Ta bort
-            </button>
-        `;
-
-        cartContainer.appendChild(div);
-    });
 }
 
-function removeFromCart(id){
+function deleteProduct(productId, button){
 
-    let cart =
-        JSON.parse(localStorage.getItem("cart"))
-        || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    cart = cart.filter(product =>
-        product.id !== id
-    );
+cart = cart.filter(p => p.id !== productId);
 
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
+localStorage.setItem("cart", JSON.stringify(cart));
 
-    loadCart();
-    updateCartCounter();
+button.parentElement.remove();
+
+updateCartCounter();
+
 }
 
 function clearCart(){
 
-    localStorage.removeItem("cart");
+localStorage.removeItem("cart");
 
-    loadCart();
-    updateCartCounter();
+let cartDiv = document.getElementById("cartItems");
+
+if(cartDiv){
+cartDiv.innerHTML = "";
+}
+
+updateCartCounter();
+
 }
