@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varukorg - Gitarrbutiken</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body onload="loadCart(); updateCartCounter()">
+
+<header>
+
+    <h1>Gitarrbutiken</h1>
+
+    <nav aria-label="Huvudmeny">
+        <a href="index.html">Hem</a>
+        <a href="products.html">Produkter</a>
+        <a href="checkout.html">Varukorg</a>
+        <a href="about.html">Om oss</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="product-section">
+
+    <h2>Din varukorg</h2>
+
+    <div id="cartItems" class="product-grid"></div>
+
+    <div class="cart-actions">
+
+        <button onclick="clearCart()">
+            Töm varukorg
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>© 2026 Gitarrbutiken</p>
+
+</footer>
+
+</body>
+
+</html>

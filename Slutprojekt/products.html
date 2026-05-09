@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkter - Gitarrbutiken</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body onload="updateCartCounter()">
+
+    <header>
+        <h1>Gitarrbutiken</h1>
+        <nav>
+            <a href="index.html">Hem</a>
+            <a href="products.html">Produkter</a>
+            <a href="checkout.html">Varukorg</a>
+            <a href="about.html">Om oss</a>
+        </nav>
+        <div class="cart-container">
+            <img id="cartIcon" src="./bilder/cart.jpg" alt="Varukorg" onclick="goToPage('checkout.html')">
+            <p id="cartCounter">0</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="product-section">
+            <h2>Alla gitarrer</h2>
+
+            <div class="product-grid">
+
+                <article class="product-card">
+                    <img src="./bilder/310-3106714_fender-stratocaster-png-transparent-png.png"
+                        alt="Fender Stratocaster">
+                    <h3>Fender Stratocaster</h3>
+                    <p>7999 kr</p>
+                    <button
+                        onclick="addToCart('Fender Stratocaster','7999 kr','./bilder/310-3106714_fender-stratocaster-png-transparent-png.png')">Lägg
+                        till i varukorg</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="./bilder/gibson.jpg" alt="Gibson Les Paul">
+                    <h3>Gibson Les Paul</h3>
+                    <p>11999 kr</p>
+                    <button onclick="addToCart('Gibson Les Paul','11999 kr','./bilder/gibson.jpg')">Lägg till i
+                        varukorg</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="./bilder/Yamaha FG800J.jpg" alt="Yamaha FG800J">
+                    <h3>Yamaha FG800J</h3>
+                    <p>1999 kr</p>
+                    <button onclick="addToCart('Yamaha FG800J','1999 kr','./bilder/Yamaha FG800J.jpg')">Lägg till i
+                        varukorg</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="./bilder/ibanezbas.jpg" alt="Ibanez bas">
+                    <h3>Ibanez Bass</h3>
+                    <p>4999 kr</p>
+                    <button onclick="addToCart('Ibanez Bass','4999 kr','./bilder/ibanezbas.jpg')">Lägg till i
+                        varukorg</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="./bilder/fendertelecaster.jpg" alt="Fender Telecaster">
+                    <h3>Fender Telecaster</h3>
+                    <p>8499 kr</p>
+                    <button onclick="addToCart('Fender Telecaster','8499 kr','./bilder/fendertelecaster.jpg')">Lägg till
+                        i varukorg</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="./bilder/jacksondinky.jpg" alt="Jackson Dinky">
+                    <h3>Jackson Dinky</h3>
+                    <p>6999 kr</p>
+                    <button onclick="addToCart('Jackson Dinky','6999 kr','./bilder/jacksondinky.jpg')">Lägg till i
+                        varukorg</button>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Gitarrbutiken</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,78 +1,105 @@
-function test() {
-    console.log("Sök klickad");
+function goToPage(page){
+    window.location.href = page;
 }
 
-function toOtherPage(location) {
-    window.location.href = location;
-}
+function addToCart(name, price, image){
 
-function sendProductToCart(divID) {
-    let div = document.getElementById(divID);
+    let cart =
+        JSON.parse(localStorage.getItem("cart"))
+        || [];
 
-    let newProduct = {
-        id: Date.now(),
-        productName: divID,
-        productPrice: div.querySelector("h2").innerText,
-        productImage: div.querySelector("img").src
+    let product = {
+        id:Date.now(),
+        name:name,
+        price:price,
+        image:image
     };
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(newProduct);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    cart.push(product);
 
-    updateCartAmount();
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCounter();
 }
 
-function loadCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+function updateCartCounter(){
 
-    let cartDiv = document.getElementById("CartSection");
-    if (!cartDiv) return;
+    let cart =
+        JSON.parse(localStorage.getItem("cart"))
+        || [];
+
+    let counter =
+        document.getElementById("cartCounter");
+
+    if(counter){
+        counter.innerText = cart.length;
+    }
+}
+
+function loadCart(){
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart"))
+        || [];
+
+    let cartContainer =
+        document.getElementById("cartItems");
+
+    if(!cartContainer){
+        return;
+    }
+
+    cartContainer.innerHTML = "";
 
     cart.forEach(product => {
-        let productDiv = document.createElement("div");
-        productDiv.classList.add("Product");
 
-        productDiv.innerHTML = `
-            <img src="${product.productImage}" />
-            <div>
-                <h2>${product.productName}</h2>
-                <h2>${product.productPrice}</h2>
-                <h2 class="Button" onclick="deleteProduct(${product.id}, this)">Ta bort</h2>
-            </div>
+        let div = document.createElement("div");
+
+        div.classList.add("product-card");
+
+        div.innerHTML = `
+            <img src="${product.image}"
+                 alt="${product.name}">
+
+            <h3>${product.name}</h3>
+
+            <p>${product.price}</p>
+
+            <button onclick="removeFromCart(${product.id})">
+                Ta bort
+            </button>
         `;
 
-        cartDiv.appendChild(productDiv);
+        cartContainer.appendChild(div);
     });
 }
 
-function deleteProduct(productId, button) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function removeFromCart(id){
 
-    cart = cart.filter(p => p.id !== productId);
+    let cart =
+        JSON.parse(localStorage.getItem("cart"))
+        || [];
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    cart = cart.filter(product =>
+        product.id !== id
+    );
 
-    button.parentElement.parentElement.remove();
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 
-    updateCartAmount();
+    loadCart();
+    updateCartCounter();
 }
 
-function clearCart() {
+function clearCart(){
+
     localStorage.removeItem("cart");
-}
 
-function updateCartAmount() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    let old = document.getElementById("cartItemCounter");
-    if (old) old.remove();
-
-    let cartIcon = document.getElementById("cartIcon");
-
-    let counter = document.createElement("p");
-    counter.id = "cartItemCounter";
-    counter.innerText = cart.length;
-
-    cartIcon.insertAdjacentElement("afterend", counter);
+    loadCart();
+    updateCartCounter();
 }
